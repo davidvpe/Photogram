@@ -8,11 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		C56091FF22396565007F8E09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56091FE22396565007F8E09 /* AppDelegate.swift */; };
-		C560920122396565007F8E09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560920022396565007F8E09 /* ViewController.swift */; };
-		C560920422396565007F8E09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C560920222396565007F8E09 /* Main.storyboard */; };
 		C560920622396566007F8E09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C560920522396566007F8E09 /* Assets.xcassets */; };
 		C560920922396566007F8E09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C560920722396566007F8E09 /* LaunchScreen.storyboard */; };
 		C560921422396566007F8E09 /* PhotogramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560921322396566007F8E09 /* PhotogramTests.swift */; };
+		C5E0642322396AFC001574E4 /* PhotogramStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E0641A22396AFC001574E4 /* PhotogramStore.framework */; };
+		C5E0642A22396AFC001574E4 /* PhotogramStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0642922396AFC001574E4 /* PhotogramStoreTests.swift */; };
+		C5E0642C22396AFC001574E4 /* PhotogramStore.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E0641C22396AFC001574E4 /* PhotogramStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5E0642F22396AFC001574E4 /* PhotogramStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E0641A22396AFC001574E4 /* PhotogramStore.framework */; };
+		C5E0643022396AFC001574E4 /* PhotogramStore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5E0641A22396AFC001574E4 /* PhotogramStore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C5E0644222396B78001574E4 /* PhotogramStore+PhotoRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0643822396B78001574E4 /* PhotogramStore+PhotoRequests.swift */; };
+		C5E0644322396B78001574E4 /* URLRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0643922396B78001574E4 /* URLRepresentable.swift */; };
+		C5E0644422396B78001574E4 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0643B22396B78001574E4 /* NetworkOperation.swift */; };
+		C5E0644522396B78001574E4 /* ImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0643C22396B78001574E4 /* ImageOperation.swift */; };
+		C5E0644622396B78001574E4 /* ConcurrentOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0643D22396B78001574E4 /* ConcurrentOperation.swift */; };
+		C5E0644722396B78001574E4 /* DavidFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0643E22396B78001574E4 /* DavidFire.swift */; };
+		C5E0644822396B78001574E4 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0643F22396B78001574E4 /* Store.swift */; };
+		C5E0644B22397048001574E4 /* PhotogramStore+AlbumRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0644A22397048001574E4 /* PhotogramStore+AlbumRequests.swift */; };
+		C5E0645A22397B3C001574E4 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0645422397B3C001574E4 /* HomePresenter.swift */; };
+		C5E0645B22397B3C001574E4 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0645522397B3C001574E4 /* HomeWorker.swift */; };
+		C5E0645C22397B3C001574E4 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0645622397B3C001574E4 /* HomeRouter.swift */; };
+		C5E0645D22397B3C001574E4 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0645722397B3C001574E4 /* HomeModels.swift */; };
+		C5E0645E22397B3C001574E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0645822397B3C001574E4 /* HomeViewController.swift */; };
+		C5E0645F22397B3C001574E4 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0645922397B3C001574E4 /* HomeInteractor.swift */; };
+		C5E0646222397BA2001574E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0646122397BA2001574E4 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,19 +41,73 @@
 			remoteGlobalIDString = C56091FA22396565007F8E09;
 			remoteInfo = Photogram;
 		};
+		C5E0642422396AFC001574E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C56091F322396565007F8E09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5E0641922396AFC001574E4;
+			remoteInfo = PhotogramStore;
+		};
+		C5E0642622396AFC001574E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C56091F322396565007F8E09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C56091FA22396565007F8E09;
+			remoteInfo = Photogram;
+		};
+		C5E0642D22396AFC001574E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C56091F322396565007F8E09 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5E0641922396AFC001574E4;
+			remoteInfo = PhotogramStore;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C5E0643622396AFC001574E4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C5E0643022396AFC001574E4 /* PhotogramStore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C56091FB22396565007F8E09 /* Photogram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photogram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56091FE22396565007F8E09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C560920022396565007F8E09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C560920322396565007F8E09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C560920522396566007F8E09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C560920822396566007F8E09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C560920A22396566007F8E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C560920F22396566007F8E09 /* PhotogramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotogramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C560921322396566007F8E09 /* PhotogramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotogramTests.swift; sourceTree = "<group>"; };
 		C560921522396566007F8E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5E0641A22396AFC001574E4 /* PhotogramStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotogramStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5E0641C22396AFC001574E4 /* PhotogramStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotogramStore.h; sourceTree = "<group>"; };
+		C5E0641D22396AFC001574E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5E0642222396AFC001574E4 /* PhotogramStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotogramStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5E0642922396AFC001574E4 /* PhotogramStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotogramStoreTests.swift; sourceTree = "<group>"; };
+		C5E0642B22396AFC001574E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5E0643822396B78001574E4 /* PhotogramStore+PhotoRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotogramStore+PhotoRequests.swift"; sourceTree = "<group>"; };
+		C5E0643922396B78001574E4 /* URLRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRepresentable.swift; sourceTree = "<group>"; };
+		C5E0643B22396B78001574E4 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
+		C5E0643C22396B78001574E4 /* ImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageOperation.swift; sourceTree = "<group>"; };
+		C5E0643D22396B78001574E4 /* ConcurrentOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConcurrentOperation.swift; sourceTree = "<group>"; };
+		C5E0643E22396B78001574E4 /* DavidFire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DavidFire.swift; sourceTree = "<group>"; };
+		C5E0643F22396B78001574E4 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		C5E0644A22397048001574E4 /* PhotogramStore+AlbumRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotogramStore+AlbumRequests.swift"; sourceTree = "<group>"; };
+		C5E0645422397B3C001574E4 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		C5E0645522397B3C001574E4 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		C5E0645622397B3C001574E4 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		C5E0645722397B3C001574E4 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		C5E0645822397B3C001574E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C5E0645922397B3C001574E4 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		C5E0646122397BA2001574E4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E0642F22396AFC001574E4 /* PhotogramStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +123,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E0641722396AFC001574E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E0641F22396AFC001574E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E0642322396AFC001574E4 /* PhotogramStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +149,8 @@
 			children = (
 				C56091FD22396565007F8E09 /* Photogram */,
 				C560921222396566007F8E09 /* PhotogramTests */,
+				C5E0641B22396AFC001574E4 /* PhotogramStore */,
+				C5E0642822396AFC001574E4 /* PhotogramStoreTests */,
 				C56091FC22396565007F8E09 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +160,8 @@
 			children = (
 				C56091FB22396565007F8E09 /* Photogram.app */,
 				C560920F22396566007F8E09 /* PhotogramTests.xctest */,
+				C5E0641A22396AFC001574E4 /* PhotogramStore.framework */,
+				C5E0642222396AFC001574E4 /* PhotogramStoreTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,9 +169,9 @@
 		C56091FD22396565007F8E09 /* Photogram */ = {
 			isa = PBXGroup;
 			children = (
+				C5E0645022397ADE001574E4 /* Infrastructure */,
+				C5E0645122397AFA001574E4 /* Interface */,
 				C56091FE22396565007F8E09 /* AppDelegate.swift */,
-				C560920022396565007F8E09 /* ViewController.swift */,
-				C560920222396565007F8E09 /* Main.storyboard */,
 				C560920522396566007F8E09 /* Assets.xcassets */,
 				C560920722396566007F8E09 /* LaunchScreen.storyboard */,
 				C560920A22396566007F8E09 /* Info.plist */,
@@ -96,7 +188,113 @@
 			path = PhotogramTests;
 			sourceTree = "<group>";
 		};
+		C5E0641B22396AFC001574E4 /* PhotogramStore */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0643F22396B78001574E4 /* Store.swift */,
+				C5E0643A22396B78001574E4 /* Operations */,
+				C5E0644E22397A97001574E4 /* Requests */,
+				C5E0644F22397AA0001574E4 /* Utils */,
+				C5E0643E22396B78001574E4 /* DavidFire.swift */,
+				C5E0641C22396AFC001574E4 /* PhotogramStore.h */,
+				C5E0641D22396AFC001574E4 /* Info.plist */,
+			);
+			path = PhotogramStore;
+			sourceTree = "<group>";
+		};
+		C5E0642822396AFC001574E4 /* PhotogramStoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0642922396AFC001574E4 /* PhotogramStoreTests.swift */,
+				C5E0642B22396AFC001574E4 /* Info.plist */,
+			);
+			path = PhotogramStoreTests;
+			sourceTree = "<group>";
+		};
+		C5E0643A22396B78001574E4 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0643B22396B78001574E4 /* NetworkOperation.swift */,
+				C5E0643C22396B78001574E4 /* ImageOperation.swift */,
+				C5E0643D22396B78001574E4 /* ConcurrentOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		C5E0644E22397A97001574E4 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0643822396B78001574E4 /* PhotogramStore+PhotoRequests.swift */,
+				C5E0644A22397048001574E4 /* PhotogramStore+AlbumRequests.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		C5E0644F22397AA0001574E4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0643922396B78001574E4 /* URLRepresentable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C5E0645022397ADE001574E4 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0645222397B11001574E4 /* Models */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		C5E0645122397AFA001574E4 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0645322397B27001574E4 /* Home */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		C5E0645222397B11001574E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C5E0645322397B27001574E4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0646022397B93001574E4 /* View */,
+				C5E0645422397B3C001574E4 /* HomePresenter.swift */,
+				C5E0645522397B3C001574E4 /* HomeWorker.swift */,
+				C5E0645622397B3C001574E4 /* HomeRouter.swift */,
+				C5E0645722397B3C001574E4 /* HomeModels.swift */,
+				C5E0645822397B3C001574E4 /* HomeViewController.swift */,
+				C5E0645922397B3C001574E4 /* HomeInteractor.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C5E0646022397B93001574E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0646122397BA2001574E4 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C5E0641522396AFC001574E4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E0642C22396AFC001574E4 /* PhotogramStore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		C56091FA22396565007F8E09 /* Photogram */ = {
@@ -106,10 +304,13 @@
 				C56091F722396565007F8E09 /* Sources */,
 				C56091F822396565007F8E09 /* Frameworks */,
 				C56091F922396565007F8E09 /* Resources */,
+				C5E0643622396AFC001574E4 /* Embed Frameworks */,
+				C5E0646422397C74001574E4 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C5E0642E22396AFC001574E4 /* PBXTargetDependency */,
 			);
 			name = Photogram;
 			productName = Photogram;
@@ -134,6 +335,43 @@
 			productReference = C560920F22396566007F8E09 /* PhotogramTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C5E0641922396AFC001574E4 /* PhotogramStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5E0643522396AFC001574E4 /* Build configuration list for PBXNativeTarget "PhotogramStore" */;
+			buildPhases = (
+				C5E0641522396AFC001574E4 /* Headers */,
+				C5E0641622396AFC001574E4 /* Sources */,
+				C5E0641722396AFC001574E4 /* Frameworks */,
+				C5E0641822396AFC001574E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotogramStore;
+			productName = PhotogramStore;
+			productReference = C5E0641A22396AFC001574E4 /* PhotogramStore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C5E0642122396AFC001574E4 /* PhotogramStoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5E0643722396AFC001574E4 /* Build configuration list for PBXNativeTarget "PhotogramStoreTests" */;
+			buildPhases = (
+				C5E0641E22396AFC001574E4 /* Sources */,
+				C5E0641F22396AFC001574E4 /* Frameworks */,
+				C5E0642022396AFC001574E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5E0642522396AFC001574E4 /* PBXTargetDependency */,
+				C5E0642722396AFC001574E4 /* PBXTargetDependency */,
+			);
+			name = PhotogramStoreTests;
+			productName = PhotogramStoreTests;
+			productReference = C5E0642222396AFC001574E4 /* PhotogramStoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,6 +386,14 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					C560920E22396566007F8E09 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = C56091FA22396565007F8E09;
+					};
+					C5E0641922396AFC001574E4 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+					C5E0642122396AFC001574E4 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = C56091FA22396565007F8E09;
 					};
@@ -168,6 +414,8 @@
 			targets = (
 				C56091FA22396565007F8E09 /* Photogram */,
 				C560920E22396566007F8E09 /* PhotogramTests */,
+				C5E0641922396AFC001574E4 /* PhotogramStore */,
+				C5E0642122396AFC001574E4 /* PhotogramStoreTests */,
 			);
 		};
 /* End PBXProject section */
@@ -179,7 +427,6 @@
 			files = (
 				C560920922396566007F8E09 /* LaunchScreen.storyboard in Resources */,
 				C560920622396566007F8E09 /* Assets.xcassets in Resources */,
-				C560920422396565007F8E09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,15 +437,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5E0641822396AFC001574E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E0642022396AFC001574E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C5E0646422397C74001574E4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C56091F722396565007F8E09 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C560920122396565007F8E09 /* ViewController.swift in Sources */,
 				C56091FF22396565007F8E09 /* AppDelegate.swift in Sources */,
+				C5E0645D22397B3C001574E4 /* HomeModels.swift in Sources */,
+				C5E0645C22397B3C001574E4 /* HomeRouter.swift in Sources */,
+				C5E0645B22397B3C001574E4 /* HomeWorker.swift in Sources */,
+				C5E0645A22397B3C001574E4 /* HomePresenter.swift in Sources */,
+				C5E0646222397BA2001574E4 /* HomeView.swift in Sources */,
+				C5E0645E22397B3C001574E4 /* HomeViewController.swift in Sources */,
+				C5E0645F22397B3C001574E4 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +497,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5E0641622396AFC001574E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E0644B22397048001574E4 /* PhotogramStore+AlbumRequests.swift in Sources */,
+				C5E0644822396B78001574E4 /* Store.swift in Sources */,
+				C5E0644722396B78001574E4 /* DavidFire.swift in Sources */,
+				C5E0644322396B78001574E4 /* URLRepresentable.swift in Sources */,
+				C5E0644422396B78001574E4 /* NetworkOperation.swift in Sources */,
+				C5E0644622396B78001574E4 /* ConcurrentOperation.swift in Sources */,
+				C5E0644222396B78001574E4 /* PhotogramStore+PhotoRequests.swift in Sources */,
+				C5E0644522396B78001574E4 /* ImageOperation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5E0641E22396AFC001574E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5E0642A22396AFC001574E4 /* PhotogramStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -218,17 +528,24 @@
 			target = C56091FA22396565007F8E09 /* Photogram */;
 			targetProxy = C560921022396566007F8E09 /* PBXContainerItemProxy */;
 		};
+		C5E0642522396AFC001574E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5E0641922396AFC001574E4 /* PhotogramStore */;
+			targetProxy = C5E0642422396AFC001574E4 /* PBXContainerItemProxy */;
+		};
+		C5E0642722396AFC001574E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C56091FA22396565007F8E09 /* Photogram */;
+			targetProxy = C5E0642622396AFC001574E4 /* PBXContainerItemProxy */;
+		};
+		C5E0642E22396AFC001574E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5E0641922396AFC001574E4 /* PhotogramStore */;
+			targetProxy = C5E0642D22396AFC001574E4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C560920222396565007F8E09 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C560920322396565007F8E09 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C560920722396566007F8E09 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -359,6 +676,7 @@
 		C560921922396566007F8E09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Photogram/Info.plist;
@@ -376,6 +694,7 @@
 		C560921A22396566007F8E09 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Photogram/Info.plist;
@@ -430,6 +749,101 @@
 			};
 			name = Release;
 		};
+		C5E0643122396AFC001574E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PhotogramStore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvpe.PhotogramStore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C5E0643222396AFC001574E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PhotogramStore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvpe.PhotogramStore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C5E0643322396AFC001574E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhotogramStoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvpe.PhotogramStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Photogram.app/Photogram";
+			};
+			name = Debug;
+		};
+		C5E0643422396AFC001574E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = PhotogramStoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidvpe.PhotogramStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Photogram.app/Photogram";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -456,6 +870,24 @@
 			buildConfigurations = (
 				C560921C22396566007F8E09 /* Debug */,
 				C560921D22396566007F8E09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5E0643522396AFC001574E4 /* Build configuration list for PBXNativeTarget "PhotogramStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5E0643122396AFC001574E4 /* Debug */,
+				C5E0643222396AFC001574E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5E0643722396AFC001574E4 /* Build configuration list for PBXNativeTarget "PhotogramStoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5E0643322396AFC001574E4 /* Debug */,
+				C5E0643422396AFC001574E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

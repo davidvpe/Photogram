@@ -1,15 +1,15 @@
 //
-//  PhotogramTests.swift
-//  PhotogramTests
+//  PhotogramStoreTests.swift
+//  PhotogramStoreTests
 //
 //  Created by Velarde Robles, David on 13/03/2019.
 //  Copyright © 2019 David Velarde. All rights reserved.
 //
 
 import XCTest
-@testable import Photogram
+@testable import PhotogramStore
 
-class PhotogramTests: XCTestCase {
+class PhotogramStoreTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
