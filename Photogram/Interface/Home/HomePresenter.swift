@@ -9,7 +9,8 @@
 import UIKit
 
 protocol HomePresentationLogic {
-    func presentSomething(response: Home.Something.Response)
+    func presentPhotos(response: Home.LoadPictures.Response)
+    func presentError(response: Home.Error.Response)
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -17,8 +18,16 @@ class HomePresenter: HomePresentationLogic {
     
     // MARK: Do something
     
-    func presentSomething(response: Home.Something.Response) {
-        let viewModel = Home.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentPhotos(response: Home.LoadPictures.Response) {
+
+        let photos = response.photos.map { photo -> FeedTableViewCell.ViewModel in
+            return FeedTableViewCell.ViewModel(title: photo.title, photoURL: photo.url, photoId: photo.id)
+        }
+
+        let viewModel = Home.LoadPictures.ViewModel(photos: photos)
+        viewController?.displayPhotos(viewModel: viewModel)
+    }
+    func presentError(response: Home.Error.Response) {
+
     }
 }

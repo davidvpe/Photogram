@@ -12,12 +12,32 @@ import UIKit
 enum Home {
     // MARK: Use cases
     
-    enum Something {
+    enum LoadPictures {
         struct Request {
         }
         struct Response {
+            let photos: [Photo]
         }
         struct ViewModel {
+            let photos: [FeedTableViewCell.ViewModel]
+        }
+    }
+
+    enum Error {
+
+        enum ErrorType {
+            case parsingError
+            case emtpyArray
+            case networkError
+        }
+
+        struct Response {
+            let errorType: ErrorType
+            let description: String?
+        }
+
+        struct ViewModel {
+            let description: String
         }
     }
 }

@@ -9,22 +9,30 @@
 import UIKit
 
 protocol HomeBusinessLogic {
-    func doSomething(request: Home.Something.Request)
+    func loadPictures(request: Home.LoadPictures.Request)
 }
 
 protocol HomeDataStore { }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
-    var worker: HomeWorker?
+    var worker = HomeWorker()
 
     // MARK: Do something
 
-    func doSomething(request: Home.Something.Request) {
-        worker = HomeWorker()
-        worker?.doSomeWork()
+    func loadPictures(request: Home.LoadPictures.Request) {
 
-        let response = Home.Something.Response()
-        presenter?.presentSomething(response: response)
+        worker.getAllPhotos(successCompletionHandler: { data in
+            guard let photos = self.worker.parsePhotos(data: data) else {
+                let response = Home.Error.Response(errorType: .parsingError, description: nil)
+                self.presenter?.presentError(response: response)
+                return
+            }
+            let response = Home.LoadPictures.Response(photos: photos)
+            self.presenter?.presentPhotos(response: response)
+        }, failureCompletionHandler: { errorMessage in
+            let response = Home.Error.Response(errorType: .networkError, description: errorMessage)
+            self.presenter?.presentError(response: response)
+        })
     }
 }

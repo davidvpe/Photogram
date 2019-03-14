@@ -31,7 +31,7 @@ public class Store {
 public final class AssetsStore: Store {
     public static let shared = AssetsStore()
 
-    public func downloadImage(withURL url: String, completion: @escaping (UIImage?) -> Void) -> ImageOperation {
+    public func downloadImage(withURL url: String, completion: @escaping (UIImage?) -> Void) {
 
         let operation = ImageOperation(url) { (image) in
             completion(image)
@@ -39,7 +39,6 @@ public final class AssetsStore: Store {
 
         enqueueOperationWithDependancies(operation: operation)
 
-        return operation
     }
 
 }

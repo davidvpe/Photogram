@@ -7,8 +7,26 @@
 //
 
 import UIKit
+import PhotogramStore
+
+typealias SuccessCompletionHandler = (Data) -> ()
+typealias FailureCompletionHandler = (String) -> ()
 
 class HomeWorker {
-    func doSomeWork() {
+    func getAllPhotos(successCompletionHandler: @escaping SuccessCompletionHandler,
+                      failureCompletionHandler: @escaping FailureCompletionHandler) {
+        
+        PhotogramStore.shared.getPhotos { (result) in
+            switch result {
+            case .success(let data):
+                successCompletionHandler(data)
+            case .failure(let description):
+                failureCompletionHandler(description)
+            }
+        }
+    }
+
+    func parsePhotos(data: Data) -> [Photo]? {
+        return try? JSONDecoder().decode([Photo].self, from: data)
     }
 }

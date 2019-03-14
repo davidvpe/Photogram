@@ -25,7 +25,7 @@ extension PhotogramStore: PhotoRequests {
 
     private func internalGetPhotos(byAlbumId albumId: String? = nil, completionHandler: @escaping NetworkManagerDataHandler) {
 
-        let url = baseURL + "/photos"
+        let url = baseURL + "photos"
 
         var params = [Parameter]()
 

@@ -30,7 +30,11 @@
 		C5E0645D22397B3C001574E4 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0645722397B3C001574E4 /* HomeModels.swift */; };
 		C5E0645E22397B3C001574E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0645822397B3C001574E4 /* HomeViewController.swift */; };
 		C5E0645F22397B3C001574E4 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0645922397B3C001574E4 /* HomeInteractor.swift */; };
-		C5E0646222397BA2001574E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0646122397BA2001574E4 /* HomeView.swift */; };
+		C5E06468223A2F33001574E4 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06467223A2F33001574E4 /* FeedTableViewCell.swift */; };
+		C5E0646D223A33B1001574E4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0646C223A33B1001574E4 /* UIView.swift */; };
+		C5E06470223A359E001574E4 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0646F223A359E001574E4 /* BaseTableView.swift */; };
+		C5E06473223A3E90001574E4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06472223A3E90001574E4 /* Photo.swift */; };
+		C5E06476223A4AA1001574E4 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06475223A4AA1001574E4 /* StorageHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +111,11 @@
 		C5E0645722397B3C001574E4 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		C5E0645822397B3C001574E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C5E0645922397B3C001574E4 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		C5E0646122397BA2001574E4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C5E06467223A2F33001574E4 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		C5E0646C223A33B1001574E4 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C5E0646F223A359E001574E4 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		C5E06472223A3E90001574E4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		C5E06475223A4AA1001574E4 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +249,8 @@
 		C5E0645022397ADE001574E4 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				C5E06474223A4A7F001574E4 /* Helpers */,
+				C5E06469223A3242001574E4 /* Extensions */,
 				C5E0645222397B11001574E4 /* Models */,
 			);
 			path = Infrastructure;
@@ -249,6 +259,7 @@
 		C5E0645122397AFA001574E4 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				C5E06465223A2F07001574E4 /* Common */,
 				C5E0645322397B27001574E4 /* Home */,
 			);
 			path = Interface;
@@ -257,6 +268,7 @@
 		C5E0645222397B11001574E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C5E06472223A3E90001574E4 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,7 +276,6 @@
 		C5E0645322397B27001574E4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				C5E0646022397B93001574E4 /* View */,
 				C5E0645422397B3C001574E4 /* HomePresenter.swift */,
 				C5E0645522397B3C001574E4 /* HomeWorker.swift */,
 				C5E0645622397B3C001574E4 /* HomeRouter.swift */,
@@ -275,12 +286,45 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		C5E0646022397B93001574E4 /* View */ = {
+		C5E06465223A2F07001574E4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C5E0646122397BA2001574E4 /* HomeView.swift */,
+				C5E0646E223A3589001574E4 /* MainViews */,
+				C5E06466223A2F0D001574E4 /* Cells */,
 			);
-			path = View;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C5E06466223A2F0D001574E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C5E06467223A2F33001574E4 /* FeedTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C5E06469223A3242001574E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0646C223A33B1001574E4 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C5E0646E223A3589001574E4 /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0646F223A359E001574E4 /* BaseTableView.swift */,
+			);
+			path = MainViews;
+			sourceTree = "<group>";
+		};
+		C5E06474223A4A7F001574E4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C5E06475223A4AA1001574E4 /* StorageHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,13 +522,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E06473223A3E90001574E4 /* Photo.swift in Sources */,
+				C5E0646D223A33B1001574E4 /* UIView.swift in Sources */,
 				C56091FF22396565007F8E09 /* AppDelegate.swift in Sources */,
 				C5E0645D22397B3C001574E4 /* HomeModels.swift in Sources */,
 				C5E0645C22397B3C001574E4 /* HomeRouter.swift in Sources */,
+				C5E06470223A359E001574E4 /* BaseTableView.swift in Sources */,
 				C5E0645B22397B3C001574E4 /* HomeWorker.swift in Sources */,
 				C5E0645A22397B3C001574E4 /* HomePresenter.swift in Sources */,
-				C5E0646222397BA2001574E4 /* HomeView.swift in Sources */,
+				C5E06476223A4AA1001574E4 /* StorageHelper.swift in Sources */,
 				C5E0645E22397B3C001574E4 /* HomeViewController.swift in Sources */,
+				C5E06468223A2F33001574E4 /* FeedTableViewCell.swift in Sources */,
 				C5E0645F22397B3C001574E4 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

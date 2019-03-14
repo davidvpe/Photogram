@@ -59,12 +59,14 @@ internal class DavidFire {
         if let url = URL(string: imageURL) {
             let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: timeout)
             return self.session?.dataTask(with: request) { data, response, error in
-                if let data = data {
-                    let image = UIImage(data: data)
-                    completion(image)
-                } else {
-                    completion(nil)
-                    return
+                DispatchQueue.main.async {
+                    if let data = data {
+                        let image = UIImage(data: data)
+                        completion(image)
+                    } else {
+                        completion(nil)
+                        return
+                    }
                 }
             }
         }
@@ -97,11 +99,13 @@ internal class DavidFire {
 			request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
 
 			return self.session?.dataTask(with: request, completionHandler: { (data, response, error) in
-				if error != nil {
-					completionBlock(.error(description: error?.localizedDescription))
-				} else {
-					completionBlock(.data(value: data))
-				}
+                DispatchQueue.main.async {
+                    if error != nil {
+                        completionBlock(.error(description: error?.localizedDescription))
+                    } else {
+                        completionBlock(.data(value: data))
+                    }
+                }
 			})
 		}
 		return nil

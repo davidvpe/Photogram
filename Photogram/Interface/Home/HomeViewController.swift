@@ -9,13 +9,15 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    func displaySomething(viewModel: Home.Something.ViewModel)
+    func displayPhotos(viewModel: Home.LoadPictures.ViewModel)
+    func displayError(viewModel: Home.Error.ViewModel)
 }
 
-class HomeViewController: UIViewController, HomeDisplayLogic {
+class HomeViewController: UIViewController {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
-    let sceneView = HomeView()
+    let sceneView = BaseTableView()
+    var arrayPhotos = [FeedTableViewCell.ViewModel]()
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -51,19 +53,47 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+
+        sceneView.tableView.dataSource = self
+        sceneView.tableView.delegate = self
+        sceneView.tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.identifier)
+
+        tryLoadPictures()
     }
 
     // MARK: Do something
 
     //@IBOutlet weak var nameTextField: UITextField!
 
-    func doSomething() {
-        let request = Home.Something.Request()
-        interactor?.doSomething(request: request)
-    }
-
-    func displaySomething(viewModel: Home.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
+    func tryLoadPictures() {
+        let request = Home.LoadPictures.Request()
+        interactor?.loadPictures(request: request)
     }
 }
+
+extension HomeViewController: HomeDisplayLogic {
+    func displayError(viewModel: Home.Error.ViewModel) {
+        print(viewModel.description)
+    }
+
+    func displayPhotos(viewModel: Home.LoadPictures.ViewModel) {
+        arrayPhotos = viewModel.photos
+        sceneView.tableView.reloadData()
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayPhotos.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let feedCell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else {
+            return UITableViewCell()
+        }
+        let viewModel = arrayPhotos[indexPath.row]
+        feedCell.setupView(viewModel)
+        return feedCell
+    }
+}
+extension HomeViewController: UITableViewDelegate {}
