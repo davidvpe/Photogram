@@ -17,6 +17,10 @@ class FeedTableViewCell: UICollectionViewCell {
         let photoId: Int
     }
 
+    private struct ViewTraits {
+        static let margin: CGFloat = 10.0
+    }
+
     static let identifier: String = "feedTableViewCell"
 
     let btnAlbum: UIButton
@@ -52,16 +56,25 @@ class FeedTableViewCell: UICollectionViewCell {
 
         title.numberOfLines = 0
 
+        photoImageView.addSubviewForAutolayout(title)
+        photoImageView.addSubviewForAutolayout(btnAlbum)
         contentView.addSubviewForAutolayout(photoImageView)
     }
 
     private func setupConstraints() {
 
         NSLayoutConstraint.activate([
+            btnAlbum.trailingAnchor.constraint(equalTo: photoImageView.trailingAnchor, constant: -ViewTraits.margin),
+            btnAlbum.topAnchor.constraint(equalTo: photoImageView.topAnchor, constant: ViewTraits.margin),
+
+            title.leadingAnchor.constraint(equalTo: photoImageView.leadingAnchor, constant: ViewTraits.margin),
+            title.trailingAnchor.constraint(equalTo: photoImageView.trailingAnchor, constant: -ViewTraits.margin),
+            title.bottomAnchor.constraint(equalTo: photoImageView.bottomAnchor, constant: -ViewTraits.margin),
+
             photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-                                     photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-                                     photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-                                     photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)])
+            photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)])
     }
 
     func setupView(_ viewModel: ViewModel) {
