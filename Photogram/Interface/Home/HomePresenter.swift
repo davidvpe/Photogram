@@ -21,7 +21,7 @@ class HomePresenter: HomePresentationLogic {
     func presentPhotos(response: Home.LoadPictures.Response) {
 
         let photos = response.photos.map { photo -> FeedTableViewCell.ViewModel in
-            return FeedTableViewCell.ViewModel(title: photo.title, photoURL: photo.url, photoId: photo.id)
+            return FeedTableViewCell.ViewModel(title: photo.title, photoURL: photo.thumbnailUrl, photoId: photo.id)
         }
 
         let viewModel = Home.LoadPictures.ViewModel(photos: photos)

@@ -9,7 +9,7 @@
 import UIKit
 import PhotogramStore
 
-class FeedTableViewCell: UITableViewCell {
+class FeedTableViewCell: UICollectionViewCell {
 
     struct ViewModel {
         let title: String?
@@ -17,26 +17,19 @@ class FeedTableViewCell: UITableViewCell {
         let photoId: Int
     }
 
-    private struct ViewTraits {
-        static let mainSpacing: CGFloat = 5.0
-    }
-
     static let identifier: String = "feedTableViewCell"
 
     let btnAlbum: UIButton
     let photoImageView: UIImageView
     let title: UILabel
-    let stackView: UIStackView
     var loadingPhotoId: Int = -1
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-
+    override init(frame: CGRect) {
         btnAlbum = UIButton(type: .custom)
         photoImageView = UIImageView(frame: .zero)
         title = UILabel(frame: .zero)
-        stackView = UIStackView(frame: .zero)
 
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(frame: frame)
 
         setupComponents()
         setupConstraints()
@@ -55,30 +48,23 @@ class FeedTableViewCell: UITableViewCell {
 
         btnAlbum.setImage(UIImage(named: "icoAlbum"), for: .normal)
 
-        photoImageView.contentMode = .scaleToFill
+        photoImageView.contentMode = .scaleAspectFit
 
         title.numberOfLines = 0
 
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.spacing = ViewTraits.mainSpacing
-
-        photoImageView.addSubviewForAutolayout(btnAlbum)
-        stackView.addArrangedSubview(photoImageView)
-        stackView.addArrangedSubview(title)
-        contentView.addSubviewForAutolayout(stackView)
+        contentView.addSubviewForAutolayout(photoImageView)
     }
 
     private func setupConstraints() {
 
-        NSLayoutConstraint.activate([stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-                                     stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-                                     stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-                                     stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)])
+        NSLayoutConstraint.activate([
+            photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+                                     photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+                                     photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+                                     photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)])
     }
 
     func setupView(_ viewModel: ViewModel) {
-
         title.text = viewModel.title
         if let photo = StorageHelper.getPhoto(fromPhotoId: viewModel.photoId) {
             photoImageView.image = photo

@@ -35,6 +35,7 @@
 		C5E06470223A359E001574E4 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0646F223A359E001574E4 /* BaseTableView.swift */; };
 		C5E06473223A3E90001574E4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06472223A3E90001574E4 /* Photo.swift */; };
 		C5E06476223A4AA1001574E4 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06475223A4AA1001574E4 /* StorageHelper.swift */; };
+		C5E0647B223A6B82001574E4 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0647A223A6B82001574E4 /* BaseCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		C5E0646F223A359E001574E4 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 		C5E06472223A3E90001574E4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C5E06475223A4AA1001574E4 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
+		C5E0647A223A6B82001574E4 /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				C5E0646F223A359E001574E4 /* BaseTableView.swift */,
+				C5E0647A223A6B82001574E4 /* BaseCollectionView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -349,7 +352,7 @@
 				C56091F822396565007F8E09 /* Frameworks */,
 				C56091F922396565007F8E09 /* Resources */,
 				C5E0643622396AFC001574E4 /* Embed Frameworks */,
-				C5E0646422397C74001574E4 /* ShellScript */,
+				C5E0646422397C74001574E4 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -498,7 +501,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C5E0646422397C74001574E4 /* ShellScript */ = {
+		C5E0646422397C74001574E4 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -507,6 +510,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Swift Lint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -523,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5E06473223A3E90001574E4 /* Photo.swift in Sources */,
+				C5E0647B223A6B82001574E4 /* BaseCollectionView.swift in Sources */,
 				C5E0646D223A33B1001574E4 /* UIView.swift in Sources */,
 				C56091FF22396565007F8E09 /* AppDelegate.swift in Sources */,
 				C5E0645D22397B3C001574E4 /* HomeModels.swift in Sources */,

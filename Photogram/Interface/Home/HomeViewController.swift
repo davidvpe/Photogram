@@ -16,7 +16,7 @@ protocol HomeDisplayLogic: class {
 class HomeViewController: UIViewController {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
-    let sceneView = BaseTableView()
+    let sceneView = BaseCollectionView()
     var arrayPhotos = [FeedTableViewCell.ViewModel]()
     // MARK: Object lifecycle
 
@@ -54,10 +54,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sceneView.tableView.dataSource = self
-        sceneView.tableView.delegate = self
-        sceneView.tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.identifier)
-
+        sceneView.collectionView.dataSource = self
+        sceneView.collectionView.delegate = self
+        sceneView.collectionView.register(FeedTableViewCell.self, forCellWithReuseIdentifier: FeedTableViewCell.identifier)
         tryLoadPictures()
     }
 
@@ -78,22 +77,32 @@ extension HomeViewController: HomeDisplayLogic {
 
     func displayPhotos(viewModel: Home.LoadPictures.ViewModel) {
         arrayPhotos = viewModel.photos
-        sceneView.tableView.reloadData()
+        sceneView.collectionView.reloadData()
     }
 }
 
-extension HomeViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrayPhotos.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let feedCell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else {
-            return UITableViewCell()
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let feedCell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else {
+            return UICollectionViewCell()
         }
         let viewModel = arrayPhotos[indexPath.row]
         feedCell.setupView(viewModel)
         return feedCell
     }
 }
-extension HomeViewController: UITableViewDelegate {}
+
+extension HomeViewController: UICollectionViewDelegate {
+
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = UIScreen.main.bounds.width / 2
+        return CGSize(width: size, height: size)
+    }
+}
