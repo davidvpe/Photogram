@@ -40,7 +40,7 @@ public class NetworkOperation: ConcurrentOperation {
                                                    params: params,
                                                    httpMethod: httpMethod,
                                                    encoding: encoding,
-                                                   completionBlock: { (result) in
+                                                   completionBlock: { result in
                                                     self.finish()
                                                     self.finishedBlock(result)
             })

@@ -9,30 +9,42 @@
 import UIKit
 
 protocol HomeBusinessLogic {
-    func loadPictures(request: Home.LoadPictures.Request)
+    func loadPictures(request: Home.LoadPhotos.Request)
+    func selectPicture(request: Home.SelectPhoto.Request)
 }
 
-protocol HomeDataStore { }
+protocol HomeDataStore {
+    var selectedPhoto: Photo? { get set }
+}
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
     var worker = HomeWorker()
+    var photos = [Photo]()
+    var selectedPhoto: Photo?
 
     // MARK: Do something
 
-    func loadPictures(request: Home.LoadPictures.Request) {
+    func loadPictures(request: Home.LoadPhotos.Request) {
 
-        worker.getAllPhotos(successCompletionHandler: { data in
-            guard let photos = self.worker.parsePhotos(data: data) else {
+        worker.getAllPhotos(successCompletionHandler: { [weak self] data in
+            guard let photos = self?.worker.parsePhotos(data: data) else {
                 let response = Home.Error.Response(errorType: .parsingError, description: nil)
-                self.presenter?.presentError(response: response)
+                self?.presenter?.presentError(response: response)
                 return
             }
-            let response = Home.LoadPictures.Response(photos: photos)
-            self.presenter?.presentPhotos(response: response)
-        }, failureCompletionHandler: { errorMessage in
+            self?.photos = photos
+            let response = Home.LoadPhotos.Response(photos: photos)
+            self?.presenter?.presentPhotos(response: response)
+        }, failureCompletionHandler: { [weak self] errorMessage in
             let response = Home.Error.Response(errorType: .networkError, description: errorMessage)
-            self.presenter?.presentError(response: response)
+            self?.presenter?.presentError(response: response)
         })
+    }
+
+    func selectPicture(request: Home.SelectPhoto.Request) {
+        selectedPhoto = photos[request.selectedIndex]
+        let response = Home.SelectPhoto.Response()
+        presenter?.presentSelectedPhoto(response: response)
     }
 }

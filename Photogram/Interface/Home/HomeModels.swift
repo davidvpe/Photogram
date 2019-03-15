@@ -12,7 +12,7 @@ import UIKit
 enum Home {
     // MARK: Use cases
     
-    enum LoadPictures {
+    enum LoadPhotos {
         struct Request {
         }
         struct Response {
@@ -23,11 +23,18 @@ enum Home {
         }
     }
 
+    enum SelectPhoto {
+        struct Request {
+            let selectedIndex: Int
+        }
+        struct Response { }
+        struct ViewModel { }
+    }
+
     enum Error {
 
         enum ErrorType {
             case parsingError
-            case emtpyArray
             case networkError
         }
 

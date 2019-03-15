@@ -36,6 +36,28 @@
 		C5E06473223A3E90001574E4 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06472223A3E90001574E4 /* Photo.swift */; };
 		C5E06476223A4AA1001574E4 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06475223A4AA1001574E4 /* StorageHelper.swift */; };
 		C5E0647B223A6B82001574E4 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0647A223A6B82001574E4 /* BaseCollectionView.swift */; };
+		C5E06492223BA7BF001574E4 /* PhotoViewerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0648C223BA7BF001574E4 /* PhotoViewerPresenter.swift */; };
+		C5E06493223BA7BF001574E4 /* PhotoViewerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0648D223BA7BF001574E4 /* PhotoViewerWorker.swift */; };
+		C5E06494223BA7BF001574E4 /* PhotoViewerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0648E223BA7BF001574E4 /* PhotoViewerRouter.swift */; };
+		C5E06495223BA7BF001574E4 /* PhotoViewerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E0648F223BA7BF001574E4 /* PhotoViewerModels.swift */; };
+		C5E06496223BA7BF001574E4 /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06490223BA7BF001574E4 /* PhotoViewerViewController.swift */; };
+		C5E06497223BA7BF001574E4 /* PhotoViewerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06491223BA7BF001574E4 /* PhotoViewerInteractor.swift */; };
+		C5E06499223BAA2A001574E4 /* PhotoViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E06498223BAA2A001574E4 /* PhotoViewerView.swift */; };
+		C5E8A0FA223BD15B00F5D5F8 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A0F9223BD15B00F5D5F8 /* ImageScrollView.swift */; };
+		C5E8A102223BE4B200F5D5F8 /* AlbumFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A0FC223BE4B200F5D5F8 /* AlbumFeedPresenter.swift */; };
+		C5E8A103223BE4B200F5D5F8 /* AlbumFeedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A0FD223BE4B200F5D5F8 /* AlbumFeedWorker.swift */; };
+		C5E8A104223BE4B200F5D5F8 /* AlbumFeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A0FE223BE4B200F5D5F8 /* AlbumFeedRouter.swift */; };
+		C5E8A105223BE4B200F5D5F8 /* AlbumFeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A0FF223BE4B200F5D5F8 /* AlbumFeedModels.swift */; };
+		C5E8A106223BE4B200F5D5F8 /* AlbumFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A100223BE4B200F5D5F8 /* AlbumFeedViewController.swift */; };
+		C5E8A107223BE4B200F5D5F8 /* AlbumFeedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A101223BE4B200F5D5F8 /* AlbumFeedInteractor.swift */; };
+		C5E8A109223BE69E00F5D5F8 /* Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E8A108223BE69E00F5D5F8 /* Hero.framework */; };
+		C5E8A10C223BE97F00F5D5F8 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A10B223BE97F00F5D5F8 /* MainTabBar.swift */; };
+		C5E8A114223BEFB600F5D5F8 /* AlbumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A10E223BEFB600F5D5F8 /* AlbumPresenter.swift */; };
+		C5E8A115223BEFB600F5D5F8 /* AlbumWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A10F223BEFB600F5D5F8 /* AlbumWorker.swift */; };
+		C5E8A116223BEFB600F5D5F8 /* AlbumRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A110223BEFB600F5D5F8 /* AlbumRouter.swift */; };
+		C5E8A117223BEFB600F5D5F8 /* AlbumModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A111223BEFB600F5D5F8 /* AlbumModels.swift */; };
+		C5E8A118223BEFB600F5D5F8 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A112223BEFB600F5D5F8 /* AlbumViewController.swift */; };
+		C5E8A119223BEFB600F5D5F8 /* AlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A113223BEFB600F5D5F8 /* AlbumInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +140,29 @@
 		C5E06472223A3E90001574E4 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C5E06475223A4AA1001574E4 /* StorageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		C5E0647A223A6B82001574E4 /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
+		C5E0648C223BA7BF001574E4 /* PhotoViewerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerPresenter.swift; sourceTree = "<group>"; };
+		C5E0648D223BA7BF001574E4 /* PhotoViewerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerWorker.swift; sourceTree = "<group>"; };
+		C5E0648E223BA7BF001574E4 /* PhotoViewerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerRouter.swift; sourceTree = "<group>"; };
+		C5E0648F223BA7BF001574E4 /* PhotoViewerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerModels.swift; sourceTree = "<group>"; };
+		C5E06490223BA7BF001574E4 /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		C5E06491223BA7BF001574E4 /* PhotoViewerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerInteractor.swift; sourceTree = "<group>"; };
+		C5E06498223BAA2A001574E4 /* PhotoViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerView.swift; sourceTree = "<group>"; };
+		C5E8A0F7223BCE0700F5D5F8 /* ZoomImageView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZoomImageView.framework; path = Carthage/Build/iOS/ZoomImageView.framework; sourceTree = "<group>"; };
+		C5E8A0F9223BD15B00F5D5F8 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
+		C5E8A0FC223BE4B200F5D5F8 /* AlbumFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFeedPresenter.swift; sourceTree = "<group>"; };
+		C5E8A0FD223BE4B200F5D5F8 /* AlbumFeedWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFeedWorker.swift; sourceTree = "<group>"; };
+		C5E8A0FE223BE4B200F5D5F8 /* AlbumFeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFeedRouter.swift; sourceTree = "<group>"; };
+		C5E8A0FF223BE4B200F5D5F8 /* AlbumFeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFeedModels.swift; sourceTree = "<group>"; };
+		C5E8A100223BE4B200F5D5F8 /* AlbumFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFeedViewController.swift; sourceTree = "<group>"; };
+		C5E8A101223BE4B200F5D5F8 /* AlbumFeedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumFeedInteractor.swift; sourceTree = "<group>"; };
+		C5E8A108223BE69E00F5D5F8 /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hero.framework; path = Carthage/Build/iOS/Hero.framework; sourceTree = "<group>"; };
+		C5E8A10B223BE97F00F5D5F8 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		C5E8A10E223BEFB600F5D5F8 /* AlbumPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPresenter.swift; sourceTree = "<group>"; };
+		C5E8A10F223BEFB600F5D5F8 /* AlbumWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumWorker.swift; sourceTree = "<group>"; };
+		C5E8A110223BEFB600F5D5F8 /* AlbumRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRouter.swift; sourceTree = "<group>"; };
+		C5E8A111223BEFB600F5D5F8 /* AlbumModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModels.swift; sourceTree = "<group>"; };
+		C5E8A112223BEFB600F5D5F8 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		C5E8A113223BEFB600F5D5F8 /* AlbumInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E8A109223BE69E00F5D5F8 /* Hero.framework in Frameworks */,
 				C5E0642F22396AFC001574E4 /* PhotogramStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +208,7 @@
 				C5E0641B22396AFC001574E4 /* PhotogramStore */,
 				C5E0642822396AFC001574E4 /* PhotogramStoreTests */,
 				C56091FC22396565007F8E09 /* Products */,
+				C5E8A0F6223BCE0700F5D5F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -261,6 +308,10 @@
 		C5E0645122397AFA001574E4 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				C5E8A10D223BEFA000F5D5F8 /* Album */,
+				C5E8A10A223BE96800F5D5F8 /* MainTabBar */,
+				C5E8A0FB223BE49A00F5D5F8 /* AlbumFeed */,
+				C5E0647F223BA5CB001574E4 /* PhotoViewer */,
 				C5E06465223A2F07001574E4 /* Common */,
 				C5E0645322397B27001574E4 /* Home */,
 			);
@@ -318,6 +369,7 @@
 			children = (
 				C5E0646F223A359E001574E4 /* BaseTableView.swift */,
 				C5E0647A223A6B82001574E4 /* BaseCollectionView.swift */,
+				C5E8A0F9223BD15B00F5D5F8 /* ImageScrollView.swift */,
 			);
 			path = MainViews;
 			sourceTree = "<group>";
@@ -328,6 +380,71 @@
 				C5E06475223A4AA1001574E4 /* StorageHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C5E0647F223BA5CB001574E4 /* PhotoViewer */ = {
+			isa = PBXGroup;
+			children = (
+				C5E0649A223BAA30001574E4 /* View */,
+				C5E0648C223BA7BF001574E4 /* PhotoViewerPresenter.swift */,
+				C5E0648D223BA7BF001574E4 /* PhotoViewerWorker.swift */,
+				C5E0648E223BA7BF001574E4 /* PhotoViewerRouter.swift */,
+				C5E0648F223BA7BF001574E4 /* PhotoViewerModels.swift */,
+				C5E06490223BA7BF001574E4 /* PhotoViewerViewController.swift */,
+				C5E06491223BA7BF001574E4 /* PhotoViewerInteractor.swift */,
+			);
+			path = PhotoViewer;
+			sourceTree = "<group>";
+		};
+		C5E0649A223BAA30001574E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5E06498223BAA2A001574E4 /* PhotoViewerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5E8A0F6223BCE0700F5D5F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5E8A108223BE69E00F5D5F8 /* Hero.framework */,
+				C5E8A0F7223BCE0700F5D5F8 /* ZoomImageView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5E8A0FB223BE49A00F5D5F8 /* AlbumFeed */ = {
+			isa = PBXGroup;
+			children = (
+				C5E8A0FC223BE4B200F5D5F8 /* AlbumFeedPresenter.swift */,
+				C5E8A0FD223BE4B200F5D5F8 /* AlbumFeedWorker.swift */,
+				C5E8A0FE223BE4B200F5D5F8 /* AlbumFeedRouter.swift */,
+				C5E8A0FF223BE4B200F5D5F8 /* AlbumFeedModels.swift */,
+				C5E8A100223BE4B200F5D5F8 /* AlbumFeedViewController.swift */,
+				C5E8A101223BE4B200F5D5F8 /* AlbumFeedInteractor.swift */,
+			);
+			path = AlbumFeed;
+			sourceTree = "<group>";
+		};
+		C5E8A10A223BE96800F5D5F8 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C5E8A10B223BE97F00F5D5F8 /* MainTabBar.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		C5E8A10D223BEFA000F5D5F8 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				C5E8A10E223BEFB600F5D5F8 /* AlbumPresenter.swift */,
+				C5E8A10F223BEFB600F5D5F8 /* AlbumWorker.swift */,
+				C5E8A110223BEFB600F5D5F8 /* AlbumRouter.swift */,
+				C5E8A111223BEFB600F5D5F8 /* AlbumModels.swift */,
+				C5E8A112223BEFB600F5D5F8 /* AlbumViewController.swift */,
+				C5E8A113223BEFB600F5D5F8 /* AlbumInteractor.swift */,
+			);
+			path = Album;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +470,7 @@
 				C56091F922396565007F8E09 /* Resources */,
 				C5E0643622396AFC001574E4 /* Embed Frameworks */,
 				C5E0646422397C74001574E4 /* Swift Lint */,
+				C5E8A0F5223BCD9B00F5D5F8 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -519,6 +637,26 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		C5E8A0F5223BCD9B00F5D5F8 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Hero.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Hero.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -526,19 +664,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E8A107223BE4B200F5D5F8 /* AlbumFeedInteractor.swift in Sources */,
+				C5E8A117223BEFB600F5D5F8 /* AlbumModels.swift in Sources */,
+				C5E8A102223BE4B200F5D5F8 /* AlbumFeedPresenter.swift in Sources */,
 				C5E06473223A3E90001574E4 /* Photo.swift in Sources */,
 				C5E0647B223A6B82001574E4 /* BaseCollectionView.swift in Sources */,
 				C5E0646D223A33B1001574E4 /* UIView.swift in Sources */,
+				C5E8A119223BEFB600F5D5F8 /* AlbumInteractor.swift in Sources */,
+				C5E06499223BAA2A001574E4 /* PhotoViewerView.swift in Sources */,
 				C56091FF22396565007F8E09 /* AppDelegate.swift in Sources */,
+				C5E8A104223BE4B200F5D5F8 /* AlbumFeedRouter.swift in Sources */,
 				C5E0645D22397B3C001574E4 /* HomeModels.swift in Sources */,
+				C5E8A106223BE4B200F5D5F8 /* AlbumFeedViewController.swift in Sources */,
 				C5E0645C22397B3C001574E4 /* HomeRouter.swift in Sources */,
 				C5E06470223A359E001574E4 /* BaseTableView.swift in Sources */,
 				C5E0645B22397B3C001574E4 /* HomeWorker.swift in Sources */,
+				C5E8A115223BEFB600F5D5F8 /* AlbumWorker.swift in Sources */,
 				C5E0645A22397B3C001574E4 /* HomePresenter.swift in Sources */,
+				C5E06492223BA7BF001574E4 /* PhotoViewerPresenter.swift in Sources */,
+				C5E06495223BA7BF001574E4 /* PhotoViewerModels.swift in Sources */,
+				C5E8A10C223BE97F00F5D5F8 /* MainTabBar.swift in Sources */,
+				C5E8A116223BEFB600F5D5F8 /* AlbumRouter.swift in Sources */,
+				C5E06497223BA7BF001574E4 /* PhotoViewerInteractor.swift in Sources */,
+				C5E8A118223BEFB600F5D5F8 /* AlbumViewController.swift in Sources */,
+				C5E06493223BA7BF001574E4 /* PhotoViewerWorker.swift in Sources */,
 				C5E06476223A4AA1001574E4 /* StorageHelper.swift in Sources */,
+				C5E8A114223BEFB600F5D5F8 /* AlbumPresenter.swift in Sources */,
+				C5E8A0FA223BD15B00F5D5F8 /* ImageScrollView.swift in Sources */,
+				C5E8A103223BE4B200F5D5F8 /* AlbumFeedWorker.swift in Sources */,
 				C5E0645E22397B3C001574E4 /* HomeViewController.swift in Sources */,
 				C5E06468223A2F33001574E4 /* FeedTableViewCell.swift in Sources */,
+				C5E8A105223BE4B200F5D5F8 /* AlbumFeedModels.swift in Sources */,
 				C5E0645F22397B3C001574E4 /* HomeInteractor.swift in Sources */,
+				C5E06494223BA7BF001574E4 /* PhotoViewerRouter.swift in Sources */,
+				C5E06496223BA7BF001574E4 /* PhotoViewerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +891,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Photogram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -750,6 +913,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Photogram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

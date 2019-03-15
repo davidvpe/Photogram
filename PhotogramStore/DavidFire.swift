@@ -94,7 +94,9 @@ internal class DavidFire {
                 return nil
             }
 
-            var request = URLRequest(url: urlWithParams, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeout)
+            var request = URLRequest(url: params.isEmpty ? url : urlWithParams,
+                                     cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
+                                     timeoutInterval: timeout)
 			request.httpMethod = httpMethod.string
 			request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
 

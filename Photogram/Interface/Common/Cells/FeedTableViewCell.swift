@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 import PhotogramStore
 
 class FeedTableViewCell: UICollectionViewCell {
@@ -78,14 +79,22 @@ class FeedTableViewCell: UICollectionViewCell {
     }
 
     func setupView(_ viewModel: ViewModel) {
+
         title.text = viewModel.title
-        if let photo = StorageHelper.getPhoto(fromPhotoId: viewModel.photoId) {
+        photoImageView.hero.id = "photo_\(viewModel.photoId)"
+
+        if let photo = StorageHelper.getPhoto(fromPhotoId: viewModel.photoId, isThumb: true) {
+
             photoImageView.image = photo
         } else {
+
             loadingPhotoId = viewModel.photoId
-            StorageHelper.savePhoto(fromURL: viewModel.photoURL, forPhotoId: viewModel.photoId) { photo, photoId in
-                if photoId == self.loadingPhotoId {
-                    self.photoImageView.image = photo
+
+            StorageHelper.savePhoto(fromURL: viewModel.photoURL, forPhotoId: viewModel.photoId, isThumb: true) { [weak self] photo, photoId in
+
+                if photoId == self?.loadingPhotoId {
+
+                    self?.photoImageView.image = photo
                 }
             }
         }

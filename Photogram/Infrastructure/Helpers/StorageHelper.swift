@@ -13,7 +13,7 @@ typealias PhotoDownloadResponse = (UIImage, Int) -> ()
 
 class StorageHelper {
 
-    static func savePhoto(fromURL photoURL: String, forPhotoId photoId: Int, completionHandler: @escaping PhotoDownloadResponse) {
+    static func savePhoto(fromURL photoURL: String, forPhotoId photoId: Int, isThumb: Bool, completionHandler: @escaping PhotoDownloadResponse) {
 
         AssetsStore.shared.downloadImage(withURL: photoURL) { (image) in
 
@@ -21,7 +21,7 @@ class StorageHelper {
                 return
             }
 
-            let fileName = "\(photoId).png"
+            let fileName = "\(photoId)\(isThumb ? "_thumb" : "").png"
 
             guard let directory = try? FileManager.default.url(for: .documentDirectory,
                                                                in: .userDomainMask,
@@ -38,9 +38,9 @@ class StorageHelper {
         }
     }
 
-    static func getPhoto(fromPhotoId photoId: Int) -> UIImage? {
+    static func getPhoto(fromPhotoId photoId: Int, isThumb: Bool) -> UIImage? {
 
-        let fileName = "\(photoId).png"
+        let fileName = "\(photoId)\(isThumb ? "_thumb" : "").png"
 
         if let dir = try? FileManager.default.url(for: .documentDirectory,
                                                   in: .userDomainMask,

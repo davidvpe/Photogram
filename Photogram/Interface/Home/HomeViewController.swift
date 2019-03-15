@@ -9,8 +9,9 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
-    func displayPhotos(viewModel: Home.LoadPictures.ViewModel)
+    func displayPhotos(viewModel: Home.LoadPhotos.ViewModel)
     func displayError(viewModel: Home.Error.ViewModel)
+    func displaySelectedPhoto(viewModel: Home.SelectPhoto.ViewModel)
 }
 
 class HomeViewController: UIViewController {
@@ -60,13 +61,21 @@ class HomeViewController: UIViewController {
         tryLoadPictures()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.hideTabBarAnimated(hide: false)
+    }
+
     // MARK: Do something
 
-    //@IBOutlet weak var nameTextField: UITextField!
-
     func tryLoadPictures() {
-        let request = Home.LoadPictures.Request()
+        let request = Home.LoadPhotos.Request()
         interactor?.loadPictures(request: request)
+    }
+
+    func trySelectPicture(_ index: Int) {
+        let request = Home.SelectPhoto.Request(selectedIndex: index)
+        interactor?.selectPicture(request: request)
     }
 }
 
@@ -75,9 +84,14 @@ extension HomeViewController: HomeDisplayLogic {
         print(viewModel.description)
     }
 
-    func displayPhotos(viewModel: Home.LoadPictures.ViewModel) {
+    func displayPhotos(viewModel: Home.LoadPhotos.ViewModel) {
         arrayPhotos = viewModel.photos
         sceneView.collectionView.reloadData()
+    }
+
+    func displaySelectedPhoto(viewModel: Home.SelectPhoto.ViewModel) {
+        tabBarController?.hideTabBarAnimated(hide: true)
+        router?.routeToSelectedPhoto()
     }
 }
 
@@ -97,7 +111,9 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        trySelectPicture(indexPath.item)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {

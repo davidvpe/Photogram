@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         window?.backgroundColor = .white
-        let homeViewController = HomeViewController()
-        let navController = UINavigationController(rootViewController: homeViewController)
-        window?.rootViewController = navController
+        let mainTabBar = MainTabBarController()
+        mainTabBar.initialSetup()
+        window?.rootViewController = mainTabBar
         window?.makeKeyAndVisible()
 
         return true
