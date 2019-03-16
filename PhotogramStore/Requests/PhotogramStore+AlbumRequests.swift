@@ -1,5 +1,5 @@
 //
-//  PhotogramStore+AlbumRequests.swift
+//  PhotogramStore+PhotoRequests.swift
 //  PhotogramStore
 //
 //  Created by Velarde Robles, David on 13/03/2019.
@@ -8,29 +8,28 @@
 
 import Foundation
 
-public protocol PhotoRequests: class {
-    func getPhotos(completionHandler: @escaping NetworkManagerDataHandler)
-    func getPhotos(byAlbumId albumId: String, completionHandler: @escaping NetworkManagerDataHandler)
+public protocol AlbumRequests: class {
+    func getAlbums(byUserId userId: String, completionHandler: @escaping NetworkManagerDataHandler)
+    func getAlbums(completionHandler: @escaping NetworkManagerDataHandler)
 }
 
-extension PhotogramStore: PhotoRequests {
+extension PhotogramStore: AlbumRequests {
 
-    public func getPhotos(completionHandler: @escaping NetworkManagerDataHandler) {
-        internalGetPhotos(completionHandler: completionHandler)
+    public func getAlbums(completionHandler: @escaping NetworkManagerDataHandler) {
+        internalGetAlbums(completionHandler: completionHandler)
     }
 
-    public func getPhotos(byAlbumId albumId: String, completionHandler: @escaping NetworkManagerDataHandler) {
-        internalGetPhotos(byAlbumId: albumId, completionHandler: completionHandler)
+    public func getAlbums(byUserId userId: String, completionHandler: @escaping NetworkManagerDataHandler) {
+        internalGetAlbums(byUserId: userId, completionHandler: completionHandler)
     }
 
-    private func internalGetPhotos(byAlbumId albumId: String? = nil, completionHandler: @escaping NetworkManagerDataHandler) {
-
-        let url = baseURL + "photos"
+    private func internalGetAlbums(byUserId userId: String? = nil, completionHandler: @escaping NetworkManagerDataHandler) {
+        let url = baseURL + "albums"
 
         var params = [Parameter]()
 
-        if let albumId = albumId {
-            params.append(Parameter("albumId", albumId))
+        if let userId = userId {
+            params.append(Parameter("userId", userId))
         }
 
         let operation = NetworkOperation(url, params: params, finishedBlock: { result in

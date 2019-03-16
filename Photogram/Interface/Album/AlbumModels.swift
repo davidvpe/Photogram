@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum AlbumModel {
+enum Album {
     // MARK: Use cases
     
     enum Something {

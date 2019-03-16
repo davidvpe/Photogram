@@ -13,13 +13,13 @@ protocol PhotoViewerBusinessLogic {
 }
 
 protocol PhotoViewerDataStore {
-    var selectedPhoto: Photo? { get set }
+    var selectedPhoto: PhotoModel? { get set }
 }
 
 class PhotoViewerInteractor: PhotoViewerBusinessLogic, PhotoViewerDataStore {
     var presenter: PhotoViewerPresentationLogic?
     var worker = PhotoViewerWorker()
-    var selectedPhoto: Photo?
+    var selectedPhoto: PhotoModel?
 
     // MARK: Do something
 

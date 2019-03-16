@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AlbumBusinessLogic {
-    func doSomething(request: AlbumModel.Something.Request)
+    func doSomething(request: Album.Something.Request)
 }
 
 protocol AlbumDataStore { }
@@ -20,10 +20,9 @@ class AlbumInteractor: AlbumBusinessLogic, AlbumDataStore {
 
     // MARK: Do something
 
-    func doSomething(request: AlbumModel.Something.Request) {
-        worker.doSomeWork()
-
-        let response = AlbumModel.Something.Response()
+    func doSomething(request: Album.Something.Request) {
+        
+        let response = Album.Something.Response()
         presenter?.presentSomething(response: response)
     }
 }

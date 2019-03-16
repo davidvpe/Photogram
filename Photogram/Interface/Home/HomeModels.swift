@@ -16,10 +16,10 @@ enum Home {
         struct Request {
         }
         struct Response {
-            let photos: [Photo]
+            let photos: [PhotoModel]
         }
         struct ViewModel {
-            let photos: [FeedTableViewCell.ViewModel]
+            let photos: [PhotoCollectionViewCell.ViewModel]
         }
     }
 

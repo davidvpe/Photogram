@@ -26,7 +26,7 @@ class HomeWorker {
         }
     }
 
-    func parsePhotos(data: Data) -> [Photo]? {
-        return try? JSONDecoder().decode([Photo].self, from: data)
+    func parsePhotos(data: Data) -> [PhotoModel]? {
+        return try? JSONDecoder().decode([PhotoModel].self, from: data)
     }
 }

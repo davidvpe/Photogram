@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import Hero
 
 class MainTabBarController: UITabBarController {
     func initialSetup() {
         let home = HomeViewController()
+        home.hero.isEnabled = true
         home.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "picture"), selectedImage: nil)
         let album = AlbumFeedViewController()
+        album.hero.isEnabled = true
         album.tabBarItem = UITabBarItem(title: "Albums", image: UIImage(named: "albums"), selectedImage: nil)
         viewControllers = [home, album].map({ vc -> UIViewController in
             let navController = UINavigationController(rootViewController: vc)
+            navController.hero.isEnabled = true
             navController.tabBarItem = vc.tabBarItem
             return navController
         })
+        hero.isEnabled = true
     }
 }
 

@@ -7,8 +7,8 @@
 //
 
 import UIKit
+import PhotogramStore
 
 class AlbumWorker {
-    func doSomeWork() {
-    }
+    
 }

@@ -14,14 +14,14 @@ protocol HomeBusinessLogic {
 }
 
 protocol HomeDataStore {
-    var selectedPhoto: Photo? { get set }
+    var selectedPhoto: PhotoModel? { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
     var worker = HomeWorker()
-    var photos = [Photo]()
-    var selectedPhoto: Photo?
+    var photos = [PhotoModel]()
+    var selectedPhoto: PhotoModel?
 
     // MARK: Do something
 

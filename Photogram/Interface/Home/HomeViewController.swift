@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     let sceneView = BaseCollectionView()
-    var arrayPhotos = [FeedTableViewCell.ViewModel]()
+    var arrayPhotos = [PhotoCollectionViewCell.ViewModel]()
     // MARK: Object lifecycle
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -54,10 +54,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = tabBarItem.title
         sceneView.collectionView.dataSource = self
         sceneView.collectionView.delegate = self
-        sceneView.collectionView.register(FeedTableViewCell.self, forCellWithReuseIdentifier: FeedTableViewCell.identifier)
+        sceneView.collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
         tryLoadPictures()
     }
 
@@ -101,12 +101,12 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let feedCell = collectionView.dequeueReusableCell(withReuseIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else {
+        guard let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else {
             return UICollectionViewCell()
         }
         let viewModel = arrayPhotos[indexPath.row]
-        feedCell.setupView(viewModel)
-        return feedCell
+        photoCell.setupView(viewModel)
+        return photoCell
     }
 }
 

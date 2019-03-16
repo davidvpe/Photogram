@@ -1,5 +1,5 @@
 //
-//  Photo.swift
+//  PhotoModel.swift
 //  Photogram
 //
 //  Created by Velarde Robles, David on 14/03/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Photo: Codable {
+struct PhotoModel: Codable {
     let albumId: Int
     let id: Int
     let title: String

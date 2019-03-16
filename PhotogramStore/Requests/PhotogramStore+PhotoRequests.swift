@@ -1,5 +1,5 @@
 //
-//  PhotogramStore+PhotoRequests.swift
+//  PhotogramStore+AlbumRequests.swift
 //  PhotogramStore
 //
 //  Created by Velarde Robles, David on 13/03/2019.
@@ -8,16 +8,30 @@
 
 import Foundation
 
-public protocol AlbumRequests: class {
-    func getAlbums(byUserId userId: String, completionHandler: @escaping NetworkManagerDataHandler)
+public protocol PhotoRequests: class {
+    func getPhotos(completionHandler: @escaping NetworkManagerDataHandler)
+    func getPhotos(byAlbumId albumId: String, completionHandler: @escaping NetworkManagerDataHandler)
 }
 
-extension PhotogramStore: AlbumRequests {
+extension PhotogramStore: PhotoRequests {
 
-    public func getAlbums(byUserId userId: String, completionHandler: @escaping NetworkManagerDataHandler) {
-        let url = baseURL + "/albums"
+    public func getPhotos(completionHandler: @escaping NetworkManagerDataHandler) {
+        internalGetPhotos(completionHandler: completionHandler)
+    }
 
-        let params = [Parameter("userId", userId)]
+    public func getPhotos(byAlbumId albumId: String, completionHandler: @escaping NetworkManagerDataHandler) {
+        internalGetPhotos(byAlbumId: albumId, completionHandler: completionHandler)
+    }
+
+    private func internalGetPhotos(byAlbumId albumId: String? = nil, completionHandler: @escaping NetworkManagerDataHandler) {
+
+        let url = baseURL + "photos"
+
+        var params = [Parameter]()
+
+        if let albumId = albumId {
+            params.append(Parameter("albumId", albumId))
+        }
 
         let operation = NetworkOperation(url, params: params, finishedBlock: { result in
             switch result {

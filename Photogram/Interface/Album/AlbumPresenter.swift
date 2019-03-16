@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AlbumPresentationLogic {
-    func presentSomething(response: AlbumModel.Something.Response)
+    func presentSomething(response: Album.Something.Response)
 }
 
 class AlbumPresenter: AlbumPresentationLogic {
@@ -17,8 +17,8 @@ class AlbumPresenter: AlbumPresentationLogic {
 
     // MARK: Do something
 
-    func presentSomething(response: AlbumModel.Something.Response) {
-        let viewModel = AlbumModel.Something.ViewModel()
+    func presentSomething(response: Album.Something.Response) {
+        let viewModel = Album.Something.ViewModel()
         viewController?.displaySomething(viewModel: viewModel)
     }
 }

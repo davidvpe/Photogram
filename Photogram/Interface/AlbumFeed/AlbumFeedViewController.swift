@@ -9,13 +9,16 @@
 import UIKit
 
 protocol AlbumFeedDisplayLogic: class {
-    func displaySomething(viewModel: AlbumFeed.Something.ViewModel)
+    func displayAlbums(viewModel: AlbumFeed.LoadAlbums.ViewModel)
+    func displayError(viewModel: AlbumFeed.Error.ViewModel)
+    func displaySelectedAlbum(viewModel: AlbumFeed.SelectAlbum.ViewModel)
 }
 
-class AlbumFeedViewController: UIViewController, AlbumFeedDisplayLogic {
+class AlbumFeedViewController: UIViewController {
     var interactor: AlbumFeedBusinessLogic?
     var router: (NSObjectProtocol & AlbumFeedRoutingLogic & AlbumFeedDataPassing)?
     let sceneView = BaseTableView()
+    var albums = [FeedTableViewCell.ViewModel]()
 
     // MARK: Object lifecycle
 
@@ -52,16 +55,51 @@ class AlbumFeedViewController: UIViewController, AlbumFeedDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
+        title = tabBarItem.title
+        sceneView.tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.identifier)
+        sceneView.tableView.delegate = self
+        sceneView.tableView.dataSource = self
+        tryLoadAlbums()
     }
 
     // MARK: Do something
 
-    func doSomething() {
-        let request = AlbumFeed.Something.Request()
-        interactor?.doSomething(request: request)
+    func tryLoadAlbums() {
+        let request = AlbumFeed.LoadAlbums.Request()
+        interactor?.loadAlbums(request: request)
+    }
+}
+
+extension AlbumFeedViewController: AlbumFeedDisplayLogic {
+
+    func displayAlbums(viewModel: AlbumFeed.LoadAlbums.ViewModel) {
+        albums = viewModel.albums
+        sceneView.tableView.reloadData()
     }
 
-    func displaySomething(viewModel: AlbumFeed.Something.ViewModel) {
+    func displayError(viewModel: AlbumFeed.Error.ViewModel) {}
+
+    func displaySelectedAlbum(viewModel: AlbumFeed.SelectAlbum.ViewModel) {}
+}
+
+extension AlbumFeedViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return albums.count
     }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else {
+            return UITableViewCell()
+        }
+
+        let viewModel = albums[indexPath.row]
+        cell.setupView(viewModel)
+        
+        return cell
+    }
+}
+
+extension AlbumFeedViewController: UITableViewDelegate {
+    
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AlbumDisplayLogic: class {
-    func displaySomething(viewModel: AlbumModel.Something.ViewModel)
+    func displaySomething(viewModel: Album.Something.ViewModel)
 }
 
 class AlbumViewController: UIViewController, AlbumDisplayLogic {
@@ -53,10 +53,10 @@ class AlbumViewController: UIViewController, AlbumDisplayLogic {
     // MARK: Do something
 
     func doSomething() {
-        let request = AlbumModel.Something.Request()
+        let request = Album.Something.Request()
         interactor?.doSomething(request: request)
     }
 
-    func displaySomething(viewModel: AlbumModel.Something.ViewModel) {
+    func displaySomething(viewModel: Album.Something.ViewModel) {
     }
 }
