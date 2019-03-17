@@ -17,7 +17,6 @@ class PhotoViewerViewController: UIViewController, PhotoViewerDisplayLogic {
     var interactor: PhotoViewerBusinessLogic?
     var router: (NSObjectProtocol & PhotoViewerRoutingLogic & PhotoViewerDataPassing)?
     let sceneView = PhotoViewerView()
-    var imageDisplayed: UIImage?
 
     // MARK: Object lifecycle
 
@@ -54,15 +53,12 @@ class PhotoViewerViewController: UIViewController, PhotoViewerDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tryLoadPicture()
         sceneView.delegate = self
     }
 
     override func viewDidLayoutSubviews() {
-        if let imageDisplayed = imageDisplayed {
-            sceneView.setupView(withImage: imageDisplayed)
-        }
         super.viewDidLayoutSubviews()
+        tryLoadPicture()
     }
 
     // MARK: Do something
@@ -73,7 +69,7 @@ class PhotoViewerViewController: UIViewController, PhotoViewerDisplayLogic {
     }
 
     func displayPhoto(viewModel: PhotoViewer.LoadPicture.ViewModel) {
-        imageDisplayed = viewModel.photo
+        sceneView.setupView(withImage: viewModel.photo)
         sceneView.scrollView.imageView.hero.id = "photo_\(viewModel.photoId)"
     }
 }
