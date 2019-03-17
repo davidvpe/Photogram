@@ -2,8 +2,7 @@
 //  HomeModels.swift
 //  Photogram
 //
-//  Created by Velarde Robles, David on 13/03/2019.
-//  Copyright (c) 2019 David Velarde. All rights reserved.
+//  Created by Velarde Robles, David on 13/03/2019.`
 //  Copyright © 2019 David Velarde. All rights reserved.
 //
 
@@ -11,13 +10,29 @@ import UIKit
 
 enum Home {
     // MARK: Use cases
-    
-    enum LoadPhotos {
-        struct Request {
+
+    enum InitialConfig {
+
+        struct Request {}
+
+        struct Response {
+            let selectedAlbum: AlbumModel?
         }
+
+        struct ViewModel {
+            let title: String
+            let shouldShowTabBar: Bool
+        }
+    }
+
+    enum LoadPhotos {
+
+        struct Request {}
+
         struct Response {
             let photos: [PhotoModel]
         }
+
         struct ViewModel {
             let photos: [PhotoCollectionViewCell.ViewModel]
         }

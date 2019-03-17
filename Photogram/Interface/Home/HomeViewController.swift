@@ -9,6 +9,7 @@
 import UIKit
 
 protocol HomeDisplayLogic: class {
+    func displayInitialConfig(viewModel: Home.InitialConfig.ViewModel)
     func displayPhotos(viewModel: Home.LoadPhotos.ViewModel)
     func displayError(viewModel: Home.Error.ViewModel)
     func displaySelectedPhoto(viewModel: Home.SelectPhoto.ViewModel)
@@ -63,11 +64,16 @@ class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tabBarController?.hideTabBarAnimated(hide: false)
+        tryLoadInitialConfig()
     }
 
     // MARK: Do something
 
+    func tryLoadInitialConfig() {
+        let request = Home.InitialConfig.Request()
+        interactor?.loadInitialConfig(request: request)
+    }
+    
     func tryLoadPictures() {
         let request = Home.LoadPhotos.Request()
         interactor?.loadPictures(request: request)
@@ -92,6 +98,10 @@ extension HomeViewController: HomeDisplayLogic {
     func displaySelectedPhoto(viewModel: Home.SelectPhoto.ViewModel) {
         tabBarController?.hideTabBarAnimated(hide: true)
         router?.routeToSelectedPhoto()
+    }
+    func displayInitialConfig(viewModel: Home.InitialConfig.ViewModel) {
+        title = viewModel.title
+        tabBarController?.hideTabBarAnimated(hide: !viewModel.shouldShowTabBar)
     }
 }
 

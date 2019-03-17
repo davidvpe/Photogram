@@ -11,6 +11,7 @@ import UIKit
 protocol HomeBusinessLogic {
     func loadPictures(request: Home.LoadPhotos.Request)
     func selectPicture(request: Home.SelectPhoto.Request)
+    func loadInitialConfig(request: Home.InitialConfig.Request)
 }
 
 enum HomeFeedOrigin {
@@ -86,5 +87,10 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
         selectedPhoto = photos[request.selectedIndex]
         let response = Home.SelectPhoto.Response()
         presenter?.presentSelectedPhoto(response: response)
+    }
+
+    func loadInitialConfig(request: Home.InitialConfig.Request) {
+        let response = Home.InitialConfig.Response(selectedAlbum: selectedAlbum)
+        presenter?.presentInitialConfig(response: response)
     }
 }

@@ -62,6 +62,11 @@ class AlbumFeedViewController: UIViewController {
         tryLoadAlbums()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.hideTabBarAnimated(hide: false)
+    }
+
     // MARK: Do something
 
     func tryLoadAlbums() {

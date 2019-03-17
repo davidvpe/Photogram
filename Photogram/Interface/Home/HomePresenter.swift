@@ -12,6 +12,7 @@ protocol HomePresentationLogic {
     func presentPhotos(response: Home.LoadPhotos.Response)
     func presentError(response: Home.Error.Response)
     func presentSelectedPhoto(response: Home.SelectPhoto.Response)
+    func presentInitialConfig(response: Home.InitialConfig.Response)
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -47,5 +48,15 @@ class HomePresenter: HomePresentationLogic {
     func presentSelectedPhoto(response: Home.SelectPhoto.Response) {
         let viewModel = Home.SelectPhoto.ViewModel()
         viewController?.displaySelectedPhoto(viewModel: viewModel)
+    }
+
+    func presentInitialConfig(response: Home.InitialConfig.Response) {
+        let viewModel: Home.InitialConfig.ViewModel
+        if let album = response.selectedAlbum {
+            viewModel = Home.InitialConfig.ViewModel(title: album.title, shouldShowTabBar: false)
+        } else {
+            viewModel = Home.InitialConfig.ViewModel(title: "Home", shouldShowTabBar: true)
+        }
+        viewController?.displayInitialConfig(viewModel: viewModel)
     }
 }

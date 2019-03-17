@@ -20,6 +20,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
     private struct ViewTraits {
         static let margin: CGFloat = 10.0
+        static let blackGradientAlpha: CGFloat = 0.75
     }
 
     static let identifier: String = "photoCollectionViewCell"
@@ -28,11 +29,16 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     let photoImageView: UIImageView
     let title: UILabel
     var loadingPhotoId: Int = -1
+    var gradientLayer: CAGradientLayer
 
     override init(frame: CGRect) {
         btnAlbum = UIButton(type: .custom)
         photoImageView = UIImageView(frame: .zero)
         title = UILabel(frame: .zero)
+        gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.clear.cgColor,
+                                UIColor.clear.cgColor,
+                                UIColor.black.withAlphaComponent(ViewTraits.blackGradientAlpha).cgColor]
 
         super.init(frame: frame)
 
@@ -42,6 +48,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         loadingPhotoId = -1
+        photoImageView.image = nil
         super.prepareForReuse()
     }
 
@@ -51,10 +58,14 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
     private func setupComponents() {
 
+        gradientLayer.frame = bounds
+        photoImageView.layer.addSublayer(gradientLayer)
+
         btnAlbum.setImage(UIImage(named: "icoAlbum"), for: .normal)
 
         photoImageView.contentMode = .scaleAspectFit
 
+        title.textColor = .white
         title.numberOfLines = 0
 
         photoImageView.addSubviewForAutolayout(title)
