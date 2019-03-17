@@ -13,8 +13,15 @@ protocol HomeBusinessLogic {
     func selectPicture(request: Home.SelectPhoto.Request)
 }
 
+enum HomeFeedOrigin {
+    case none
+    case albumFeed
+}
+
 protocol HomeDataStore {
     var selectedPhoto: PhotoModel? { get set }
+    var selectedAlbum: AlbumModel? { get set }
+    var origin: HomeFeedOrigin { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
@@ -22,11 +29,22 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var worker = HomeWorker()
     var photos = [PhotoModel]()
     var selectedPhoto: PhotoModel?
+    var selectedAlbum: AlbumModel?
+    var origin: HomeFeedOrigin = .none
 
     // MARK: Do something
 
     func loadPictures(request: Home.LoadPhotos.Request) {
 
+        switch origin {
+        case .albumFeed:
+            loadAlbumPictures()
+        case .none:
+            loadAllPictures()
+        }
+    }
+
+    private func loadAllPictures() {
         worker.getAllPhotos(successCompletionHandler: { [weak self] data in
             guard let photos = self?.worker.parsePhotos(data: data) else {
                 let response = Home.Error.Response(errorType: .parsingError, description: nil)
@@ -36,9 +54,31 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
             self?.photos = photos
             let response = Home.LoadPhotos.Response(photos: photos)
             self?.presenter?.presentPhotos(response: response)
-        }, failureCompletionHandler: { [weak self] errorMessage in
-            let response = Home.Error.Response(errorType: .networkError, description: errorMessage)
-            self?.presenter?.presentError(response: response)
+            }, failureCompletionHandler: { [weak self] errorMessage in
+                let response = Home.Error.Response(errorType: .networkError, description: errorMessage)
+                self?.presenter?.presentError(response: response)
+        })
+    }
+
+    private func loadAlbumPictures() {
+        guard let albumId = selectedAlbum?.id else {
+            let response = Home.Error.Response(errorType: .missingAlbum, description: nil)
+            presenter?.presentError(response: response)
+            return
+        }
+
+        worker.getAllPhotos(forAlbumId: albumId, successCompletionHandler: { [weak self] data in
+            guard let photos = self?.worker.parsePhotos(data: data) else {
+                let response = Home.Error.Response(errorType: .parsingError, description: nil)
+                self?.presenter?.presentError(response: response)
+                return
+            }
+            self?.photos = photos
+            let response = Home.LoadPhotos.Response(photos: photos)
+            self?.presenter?.presentPhotos(response: response)
+            }, failureCompletionHandler: { [weak self] errorMessage in
+                let response = Home.Error.Response(errorType: .networkError, description: errorMessage)
+                self?.presenter?.presentError(response: response)
         })
     }
 

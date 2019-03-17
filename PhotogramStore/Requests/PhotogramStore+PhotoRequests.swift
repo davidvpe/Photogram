@@ -10,7 +10,7 @@ import Foundation
 
 public protocol PhotoRequests: class {
     func getPhotos(completionHandler: @escaping NetworkManagerDataHandler)
-    func getPhotos(byAlbumId albumId: String, completionHandler: @escaping NetworkManagerDataHandler)
+    func getPhotos(byAlbumId albumId: Int, completionHandler: @escaping NetworkManagerDataHandler)
 }
 
 extension PhotogramStore: PhotoRequests {
@@ -19,11 +19,11 @@ extension PhotogramStore: PhotoRequests {
         internalGetPhotos(completionHandler: completionHandler)
     }
 
-    public func getPhotos(byAlbumId albumId: String, completionHandler: @escaping NetworkManagerDataHandler) {
+    public func getPhotos(byAlbumId albumId: Int, completionHandler: @escaping NetworkManagerDataHandler) {
         internalGetPhotos(byAlbumId: albumId, completionHandler: completionHandler)
     }
 
-    private func internalGetPhotos(byAlbumId albumId: String? = nil, completionHandler: @escaping NetworkManagerDataHandler) {
+    private func internalGetPhotos(byAlbumId albumId: Int? = nil, completionHandler: @escaping NetworkManagerDataHandler) {
 
         let url = baseURL + "photos"
 

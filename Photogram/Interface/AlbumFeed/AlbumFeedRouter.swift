@@ -8,7 +8,9 @@
 
 import UIKit
 
-@objc protocol AlbumFeedRoutingLogic { }
+@objc protocol AlbumFeedRoutingLogic {
+    func routeToSelectedAlbum()
+}
 
 protocol AlbumFeedDataPassing {
     var dataStore: AlbumFeedDataStore? { get }
@@ -19,5 +21,12 @@ class AlbumFeedRouter: NSObject, AlbumFeedRoutingLogic, AlbumFeedDataPassing {
     var dataStore: AlbumFeedDataStore?
 
     // MARK: Routing
+    func routeToSelectedAlbum() {
+        let destinationVC = HomeViewController()
+        var destinationDS = destinationVC.router?.dataStore
 
+        destinationDS?.selectedAlbum = dataStore?.selectedAlbum
+        destinationDS?.origin = .albumFeed
+        viewController?.navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }

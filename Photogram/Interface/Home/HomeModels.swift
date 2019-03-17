@@ -36,6 +36,7 @@ enum Home {
         enum ErrorType {
             case parsingError
             case networkError
+            case missingAlbum
         }
 
         struct Response {

@@ -30,12 +30,16 @@ class HomePresenter: HomePresentationLogic {
     }
     func presentError(response: Home.Error.Response) {
         var errorMessage = ""
+        
         switch response.errorType {
         case .networkError:
             errorMessage = response.description ?? ""
         case .parsingError:
             errorMessage = "There's been an error parsing the data"
+        case .missingAlbum:
+            errorMessage = "There was an error obtaining the album info"
         }
+
         let viewModel = Home.Error.ViewModel(description: errorMessage)
         viewController?.displayError(viewModel: viewModel)
     }

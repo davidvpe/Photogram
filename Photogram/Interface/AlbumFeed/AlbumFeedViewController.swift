@@ -68,6 +68,11 @@ class AlbumFeedViewController: UIViewController {
         let request = AlbumFeed.LoadAlbums.Request()
         interactor?.loadAlbums(request: request)
     }
+
+    func trySelectPicture(_ index: Int) {
+        let request = AlbumFeed.SelectAlbum.Request(selectedIndex: index)
+        interactor?.selectAlbum(request: request)
+    }
 }
 
 extension AlbumFeedViewController: AlbumFeedDisplayLogic {
@@ -79,7 +84,9 @@ extension AlbumFeedViewController: AlbumFeedDisplayLogic {
 
     func displayError(viewModel: AlbumFeed.Error.ViewModel) {}
 
-    func displaySelectedAlbum(viewModel: AlbumFeed.SelectAlbum.ViewModel) {}
+    func displaySelectedAlbum(viewModel: AlbumFeed.SelectAlbum.ViewModel) {
+        router?.routeToSelectedAlbum()
+    }
 }
 
 extension AlbumFeedViewController: UITableViewDataSource {
@@ -101,5 +108,7 @@ extension AlbumFeedViewController: UITableViewDataSource {
 }
 
 extension AlbumFeedViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        trySelectPicture(indexPath.row)
+    }
 }

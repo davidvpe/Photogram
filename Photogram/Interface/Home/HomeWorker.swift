@@ -16,7 +16,21 @@ class HomeWorker {
     func getAllPhotos(successCompletionHandler: @escaping SuccessCompletionHandler,
                       failureCompletionHandler: @escaping FailureCompletionHandler) {
         
-        PhotogramStore.shared.getPhotos { (result) in
+        PhotogramStore.shared.getPhotos { result in
+            switch result {
+            case .success(let data):
+                successCompletionHandler(data)
+            case .failure(let description):
+                failureCompletionHandler(description)
+            }
+        }
+    }
+
+    func getAllPhotos(forAlbumId albumId: Int,
+                      successCompletionHandler: @escaping SuccessCompletionHandler,
+                      failureCompletionHandler: @escaping FailureCompletionHandler) {
+
+        PhotogramStore.shared.getPhotos(byAlbumId: albumId) { result in
             switch result {
             case .success(let data):
                 successCompletionHandler(data)
